@@ -1,66 +1,79 @@
-import React, { useState, useEffect, useCallback, memo } from 'react';
-import { FlatList, Text, View, Dimensions } from 'react-native';
+import React, { memo, useCallback, useRef, useState } from 'react';
+import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
+import { Source as FastImageSource } from 'react-native-fast-image';
+import type { ICarouselInstance } from 'react-native-reanimated-carousel';
+import Carousel from 'react-native-reanimated-carousel';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import OnboardingSlides from '../../components/Lists/onboarding/OnboardingSlides';
+import { onboardingData } from '../../data/onboardingData';
 import styles from './Onboarding.styles';
-import CustomImage from '../../components/Image/CustomImage';
-import images from '../../assets/images';
-import { scale } from 'react-native-size-matters';
-import { colors } from '../../utils';
 
 const { height, width } = Dimensions.get('screen');
 
-const Onboarding = () => {
-  const [data, setData] = useState<any[]>([
-    {
-      id: 1,
-      title: 'Track Expenses Instantly',
-      subtitle:
-        'We automatically detect and extract bank transactions from your SMS messages — no manual entry needed!',
-      image: images.onboarding1,
-    },
-    {
-      id: 2,
-      title: 'Visualize Your Spending',
-      subtitle:
-        'See your monthly expenses, recent transactions, and category-wise insights — all in one place.',
-      image: images.onboarding2,
-    },
-    {
-      id: 3,
-      title: 'Secure & Customizable',
-      subtitle:
-        'Add your own expenses manually, and keep everything private — your data stays on your phone.',
-      image: images.onboarding3,
-    },
-  ]);
+interface Item {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: number | FastImageSource;
+}
 
-  const renderItem = ({ item, index }: { item: any; index: number }) => {
-    return (
-      <View
-        style={[
-          styles.renderItem,
-          {
-            backgroundColor: index === 2 ? colors.pearlWhite : colors.splashBG,
-          },
-        ]}
-      >
-        <CustomImage
-          source={item.image}
-          style={{ height: height, width: width }}
-        />
-      </View>
-    );
+const Onboarding = () => {
+  const [data, setData] = useState<Item[]>(onboardingData || []);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const carouselRef = useRef<ICarouselInstance>(null);
+
+  const renderItem = useCallback(
+    ({ item, index }: { item: any; index: number }) => {
+      return <OnboardingSlides item={item} index={index} />;
+    },
+    [data],
+  );
+
+  const goTo = (i: number) => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollTo({ index: i, animated: true });
+      setSelectedIndex(i);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedIndex < data.length - 1) {
+      goTo(selectedIndex + 1);
+    }
+  };
+
+  const handleSkip = () => {
+    goTo(data.length - 1);
   };
 
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
+      <Carousel
+        ref={carouselRef}
+        loop={false}
+        width={width}
+        height={height / 1.3}
+        autoPlay={false}
         data={data}
+        scrollAnimationDuration={1000}
         renderItem={renderItem}
-        keyExtractor={(item: any) => item.toString()}
-        horizontal
-        showsHorizontalScrollIndicator={false}
       />
+      <View style={styles.controls}>
+        {selectedIndex < data.length && (
+          <View style={styles.btnView}>
+            <TouchableOpacity onPress={handleSkip}>
+              <Text style={styles.btn}>
+                {selectedIndex !== 2 ? 'Skip' : 'Get Started'}
+              </Text>
+            </TouchableOpacity>
+            {selectedIndex !== 2 && (
+              <TouchableOpacity onPress={handleNext}>
+                <Text style={styles.btn}>Next</Text>
+              </TouchableOpacity>
+            )}
+          </View>
+        )}
+      </View>
     </SafeAreaView>
   );
 };

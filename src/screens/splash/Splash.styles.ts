@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { scale } from 'react-native-size-matters';
-import { colors } from '../../utils';
+import { colors } from '../../theme';
 
 export default StyleSheet.create({
   container: {

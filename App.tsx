@@ -4,12 +4,16 @@ import { NavigationContainer } from '@react-navigation/native';
 import * as React from 'react';
 import { StatusBar } from 'react-native';
 import AuthNavigation from './src/navigation/AuthNavigation';
+import 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <StatusBar barStyle="dark-content" />
-      <AuthNavigation />
-    </NavigationContainer>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <StatusBar barStyle="dark-content" />
+        <AuthNavigation />
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }

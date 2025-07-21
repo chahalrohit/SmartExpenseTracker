@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleProp } from 'react-native';
-import FastImage, { ResizeMode } from 'react-native-fast-image';
-
+import FastImage, {
+  ResizeMode,
+  Source as FastImageSource,
+  ImageStyle as FastImageStyle,
+} from 'react-native-fast-image';
 interface Props {
-  source: number;
-  style: StyleProp<{}>;
+  source: number | FastImageSource;
+  style: StyleProp<FastImageStyle>;
   resizeMode?: ResizeMode;
 }
 
