@@ -1,10 +1,18 @@
-import React, { useEffect, memo } from 'react';
-import { StatusBar, PermissionsAndroid } from 'react-native';
+import React, { memo, useEffect, useRef } from 'react';
+import {
+  Alert,
+  AppState,
+  BackHandler,
+  Linking,
+  PermissionsAndroid,
+} from 'react-native';
+import SmsListener from 'react-native-android-sms-listener';
+import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics';
+import SmsAndroid from 'react-native-get-sms-android';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../assets/images';
 import CustomImage from '../../components/Image/CustomImage';
 import styles from './Splash.styles';
-import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics';
 
 interface Props {
   navigation: any;
@@ -12,12 +20,28 @@ interface Props {
 
 const Splash = ({ navigation }: Props) => {
   const rnBiometrics = new ReactNativeBiometrics();
+  const appState = useRef(AppState.currentState);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      // checkBiometrics();
-      navigation.navigate('onboarding');
+    const timer = setTimeout(async () => {
+      const granted = await PermissionsAndroid.check(
+        PermissionsAndroid.PERMISSIONS.READ_SMS,
+      );
+      if (granted) {
+        navigation.navigate('onboarding');
+        SmsAndroid.list(
+          JSON.stringify({ box: 'inbox', maxCount: 5 }),
+          (fail: any) => {
+            console.log('Failed:', fail);
+          },
+          (count: any, smsList: any) => {
+            const messages = JSON.parse(smsList);
+            console.log('Messages:', messages);
+          },
+        );
+      }
     }, 2000);
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -25,8 +49,45 @@ const Splash = ({ navigation }: Props) => {
     requestSMSPermission();
   }, []);
 
+  useEffect(() => {
+    const subscription = SmsListener.addListener((message: any) => {
+      console.log('Received SMS:', message);
+    });
+
+    return () => {
+      subscription.remove();
+    };
+  }, []);
+
   async function requestSMSPermission() {
-    await PermissionsAndroid.request(PermissionsAndroid.PERMISSIONS.READ_SMS);
+    const result = await PermissionsAndroid.requestMultiple([
+      PermissionsAndroid.PERMISSIONS.RECEIVE_SMS,
+      PermissionsAndroid.PERMISSIONS.READ_SMS,
+    ]);
+
+    const receiveSmsStatus = result[PermissionsAndroid.PERMISSIONS.RECEIVE_SMS];
+    const readSmsStatus = result[PermissionsAndroid.PERMISSIONS.READ_SMS];
+
+    if (
+      receiveSmsStatus === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN ||
+      readSmsStatus === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN
+    ) {
+      Alert.alert(
+        'Permission Required',
+        'You should enable SMS permission for the app to work correctly.',
+        [
+          {
+            text: 'OK',
+            onPress: () => Linking.openSettings(),
+          },
+          {
+            text: 'Cancel',
+            style: 'cancel',
+            onPress: () => BackHandler.exitApp(),
+          },
+        ],
+      );
+    }
   }
 
   function checkBiometrics() {
