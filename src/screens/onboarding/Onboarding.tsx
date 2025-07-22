@@ -19,6 +19,10 @@ import styles from './Onboarding.styles';
 
 const { height, width } = Dimensions.get('screen');
 
+interface Props {
+  navigation: any;
+}
+
 interface Item {
   id: number;
   title: string;
@@ -26,7 +30,7 @@ interface Item {
   image: number | FastImageSource;
 }
 
-const Onboarding = () => {
+const Onboarding = ({ navigation }: Props) => {
   const [data, setData] = useState<Item[]>(onboardingData || []);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const carouselRef = useRef<ICarouselInstance>(null);
@@ -55,6 +59,10 @@ const Onboarding = () => {
     goTo(data.length - 1);
   };
 
+  const goToLogin = () => {
+    navigation.navigate('login');
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <Carousel
@@ -70,7 +78,9 @@ const Onboarding = () => {
       <View style={styles.controls}>
         {selectedIndex < data.length && (
           <View style={styles.btnView}>
-            <TouchableOpacity onPress={handleSkip}>
+            <TouchableOpacity
+              onPress={() => (selectedIndex !== 2 ? handleSkip() : goToLogin())}
+            >
               <Text style={styles.btn}>
                 {selectedIndex !== 2 ? 'Skip' : 'Get Started'}
               </Text>

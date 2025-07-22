@@ -5,6 +5,7 @@ import {
   BackHandler,
   Linking,
   PermissionsAndroid,
+  Platform,
 } from 'react-native';
 import SmsListener from 'react-native-android-sms-listener';
 import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics';

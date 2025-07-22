@@ -1,4 +1,4 @@
 declare module 'react-native-get-sms-android' {
-  const SmsAndroid: any; // or type it manually later
+  const SmsAndroid: any;
   export default SmsAndroid;
 }
