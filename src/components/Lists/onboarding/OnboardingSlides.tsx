@@ -1,9 +1,7 @@
 import React from 'react';
-import { Dimensions, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 import { Source as FastImageSource } from 'react-native-fast-image';
-import { scale } from 'react-native-size-matters';
 import CustomImage from '../../../components/Image/CustomImage';
-import { colors, fonts } from '../../../theme';
 import styles from './OnboardingSlides.styles';
 
 interface Item {
@@ -18,7 +16,7 @@ interface Props {
   index: number;
 }
 
-const OnboardingSlides = ({ item, index }: Props) => {
+const OnboardingSlides = ({ item }: Props) => {
   return (
     <View style={[styles.renderItem, {}]}>
       <CustomImage source={item.image} style={styles.image} />

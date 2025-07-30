@@ -1,14 +1,5 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import {
-  Dimensions,
-  Text,
-  TouchableOpacity,
-  View,
-  BackHandler,
-  Linking,
-  PermissionsAndroid,
-  Alert,
-} from 'react-native';
+import React, { memo, useCallback, useRef, useState } from 'react';
+import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
 import { Source as FastImageSource } from 'react-native-fast-image';
 import type { ICarouselInstance } from 'react-native-reanimated-carousel';
 import Carousel from 'react-native-reanimated-carousel';

@@ -1,13 +1,7 @@
-import React, { memo, useEffect, useRef } from 'react';
-import {
-  Alert,
-  AppState,
-  BackHandler,
-  Linking,
-  PermissionsAndroid,
-} from 'react-native';
+import React, { memo, useEffect } from 'react';
+import { Alert, BackHandler, Linking, PermissionsAndroid } from 'react-native';
 import SmsListener from 'react-native-android-sms-listener';
-import ReactNativeBiometrics, { BiometryTypes } from 'react-native-biometrics';
+// import ReactNativeBiometrics from 'react-native-biometrics';
 import SmsAndroid from 'react-native-get-sms-android';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../assets/images';
@@ -19,8 +13,7 @@ interface Props {
 }
 
 const Splash = ({ navigation }: Props) => {
-  const rnBiometrics = new ReactNativeBiometrics();
-  const appState = useRef(AppState.currentState);
+  // const rnBiometrics = new ReactNativeBiometrics();
 
   useEffect(() => {
     const timer = setTimeout(async () => {
@@ -90,40 +83,40 @@ const Splash = ({ navigation }: Props) => {
     }
   }
 
-  function checkBiometrics() {
-    // Check biometric availability
-    rnBiometrics.isSensorAvailable().then(resultObject => {
-      const { available, biometryType } = resultObject;
+  // function checkBiometrics() {
+  //   // Check biometric availability
+  //   rnBiometrics.isSensorAvailable().then(resultObject => {
+  //     const { available, biometryType } = resultObject;
 
-      if (available && biometryType === BiometryTypes.TouchID) {
-        console.log('TouchID is supported');
-        biometricPrompt();
-      } else if (available && biometryType === BiometryTypes.FaceID) {
-        console.log('FaceID is supported');
-      } else if (available && biometryType === BiometryTypes.Biometrics) {
-        console.log('Biometrics is supported');
-        biometricPrompt();
-      } else {
-        console.log('Biometrics not supported');
-      }
-    });
-  }
+  //     if (available && biometryType === BiometryTypes.TouchID) {
+  //       console.log('TouchID is supported');
+  //       biometricPrompt();
+  //     } else if (available && biometryType === BiometryTypes.FaceID) {
+  //       console.log('FaceID is supported');
+  //     } else if (available && biometryType === BiometryTypes.Biometrics) {
+  //       console.log('Biometrics is supported');
+  //       biometricPrompt();
+  //     } else {
+  //       console.log('Biometrics not supported');
+  //     }
+  //   });
+  // }
 
-  async function biometricPrompt() {
-    rnBiometrics
-      .simplePrompt({ promptMessage: 'Confirm your identity' })
-      .then(resultObject => {
-        const { success } = resultObject;
-        if (success) {
-          console.log('Biometric authentication successful');
-        } else {
-          console.log('User cancelled biometric prompt');
-        }
-      })
-      .catch(() => {
-        console.log('Biometrics failed');
-      });
-  }
+  // async function biometricPrompt() {
+  //   rnBiometrics
+  //     .simplePrompt({ promptMessage: 'Confirm your identity' })
+  //     .then(resultObject => {
+  //       const { success } = resultObject;
+  //       if (success) {
+  //         console.log('Biometric authentication successful');
+  //       } else {
+  //         console.log('User cancelled biometric prompt');
+  //       }
+  //     })
+  //     .catch(() => {
+  //       console.log('Biometrics failed');
+  //     });
+  // }
 
   return (
     <SafeAreaView style={styles.container}>
