@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",
+    "@react-native-community/template": "0.80.2",
     "@react-native-vector-icons/material-design-icons": "^12.1.0",
     "@react-native/new-app-screen": "0.80.2",
     "@react-navigation/bottom-tabs": "^7.4.2",
@@ -30,6 +31,7 @@
     "react-native-android-sms-listener": "^0.8.0",
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-biometrics": "^3.0.1",
+    "react-native-eject": "^1.0.2",
     "react-native-fast-image": "^8.6.3",
     "react-native-gesture-handler": "^2.27.1",
     "react-native-get-sms-android": "^2.1.0",

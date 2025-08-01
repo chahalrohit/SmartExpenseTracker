@@ -1751,6 +1751,11 @@
     prompts "^2.4.2"
     semver "^7.5.2"
 
+"@react-native-community/template@0.80.2":
+  version "0.80.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/template/-/template-0.80.2.tgz#090fc939cbc9357a9d2c2b51b23176bf0ebd2e50"
+  integrity sha512-cyx1uXUTifHlzcv7hfCovLnzJS8ew3Z0fqWVmY31D6xxRadzGA3oNZYowucuf7fIm5Q8aqOW1z3siLpVn5sx1A==
+
 "@react-native-vector-icons/common@^12.2.0":
   version "12.2.0"
   resolved "https://registry.yarnpkg.com/@react-native-vector-icons/common/-/common-12.2.0.tgz#9d42cddd6dc87ba1f7daf7386150034b0ed8caa7"
@@ -6732,6 +6737,11 @@ react-native-biometrics@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/react-native-biometrics/-/react-native-biometrics-3.0.1.tgz#23c5a0bdbae1fcb1e08b22936223fe0fc4af846e"
   integrity sha512-Ru80gXRa9KG04sl5AB9HyjLjVbduhqZVjA+AiOSGqr+fNqCDmCu9y5WEksnjbnniNLmq1yGcw+qcLXmR1ddLDQ==
+
+react-native-eject@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-eject/-/react-native-eject-1.0.2.tgz#97b2d7c4aefa297c650a0fa50985ffcda3c73216"
+  integrity sha512-qAvAE81cOt+JLB4ExGga9Gf42GefaR49O8KB0h8w6GqCqtUkt/9URQ+JOldRY0kJDfTu3bIKGpHxqSh8s571VQ==
 
 react-native-fast-image@^8.6.3:
   version "8.6.3"

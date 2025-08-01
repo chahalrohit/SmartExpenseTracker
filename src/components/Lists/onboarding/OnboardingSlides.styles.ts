@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.splashBG,
+    backgroundColor: colors.white,
   },
   image: {
     height: scale(300),

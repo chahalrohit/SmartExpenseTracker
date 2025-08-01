@@ -5,7 +5,7 @@
 		<key>CFBundleDevelopmentRegion</key>
 		<string>en</string>
 		<key>CFBundleDisplayName</key>
-		<string>SMSExpenseTracker</string>
+		<string>SmartExpenseTracker</string>
 		<key>CFBundleExecutable</key>
 		<string>$(EXECUTABLE_NAME)</string>
 		<key>CFBundleIdentifier</key>
@@ -32,9 +32,7 @@
 			<true/>
 		</dict>
 		<key>NSLocationWhenInUseUsageDescription</key>
-		<string/>
-		<key>NSFaceIDUsageDescription</key>
-		<string>We use Face ID to secure your account</string>
+		<string></string>
 		<key>RCTNewArchEnabled</key>
 		<true/>
 		<key>UILaunchStoryboardName</key>
@@ -51,13 +49,5 @@
 		</array>
 		<key>UIViewControllerBasedStatusBarAppearance</key>
 		<false/>
-		<key>UIAppFonts</key>
-		<array>
-			<string>Montserrat-Bold.ttf</string>
-			<string>Montserrat-Light.ttf</string>
-			<string>Montserrat-Medium.ttf</string>
-			<string>Montserrat-Regular.ttf</string>
-			<string>Montserrat-SemiBold.ttf</string>
-		</array>
 	</dict>
 </plist>
