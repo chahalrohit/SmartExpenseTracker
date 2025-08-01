@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
 
     factory.startReactNative(
-      withModuleName: "smsExpenseTracker",
+      withModuleName: "smartExpenseTracker",
       in: window,
       launchOptions: launchOptions
     )
