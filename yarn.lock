@@ -7930,9 +7930,9 @@ vary@~1.1.2:
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
 victory-native@^41.17.4:
-  version "41.17.4"
-  resolved "https://registry.yarnpkg.com/victory-native/-/victory-native-41.17.4.tgz#44613195e27602752b6708f006c78703bb6b09d6"
-  integrity sha512-qOdOp7PvfF+hRFFLyhbfRN879oGKDAXM0pT5JobhVsfsg/v3WRXIiLYgT5Wa+7S2HXJgrrKPxUHzrYO4E18OQA==
+  version "41.18.0"
+  resolved "https://registry.yarnpkg.com/victory-native/-/victory-native-41.18.0.tgz#5a5164f8e22c549d197309525c9f9bd2ef3e6d5c"
+  integrity sha512-MFnI3KXyWh8DTLsz9oXquRrlbhN6igw71zmBeZNogxLGgNtYVZ5oguPpV1eHN2ocjWd1nQsN1/C8hrkBj+VDKw==
   dependencies:
     d3-scale "^4.0.2"
     d3-shape "^3.2.0"
@@ -8174,9 +8174,9 @@ yocto-queue@^0.1.0:
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
 
 yup@^1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/yup/-/yup-1.6.1.tgz#8defcff9daaf9feac178029c0e13b616563ada4b"
-  integrity sha512-JED8pB50qbA4FOkDol0bYF/p60qSEDQqBD0/qeIrUCG1KbPBIQ776fCUNb9ldbPcSTxA69g/47XTo4TqWiuXOA==
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-1.7.0.tgz#5d2feeccc1725c39bfed6ec677cc0622527dafaf"
+  integrity sha512-VJce62dBd+JQvoc+fCVq+KZfPHr+hXaxCcVgotfwWvlR0Ja3ffYKaJBT8rptPOSKOGJDCUnW2C2JWpud7aRP6Q==
   dependencies:
     property-expr "^2.0.5"
     tiny-case "^1.0.3"
