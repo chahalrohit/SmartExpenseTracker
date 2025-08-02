@@ -14,8 +14,12 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'SmartExpenseTracker' do
+target 'smartExpenseTracker' do
   config = use_native_modules!
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
 
   use_react_native!(
     :path => config[:reactNativePath],

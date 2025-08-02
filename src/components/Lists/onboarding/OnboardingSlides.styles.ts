@@ -1,5 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { scale, moderateScale } from 'react-native-size-matters';
+import { Dimensions, StyleSheet } from 'react-native';
+import { moderateScale, scale } from 'react-native-size-matters';
 import { colors, fonts } from '../../../theme';
 
 const { height, width } = Dimensions.get('screen');
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.splashBG,
+    backgroundColor: colors.white,
   },
   image: {
     height: scale(300),

@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { Dimensions, StyleSheet } from 'react-native';
 import { scale } from 'react-native-size-matters';
 import { colors, fonts } from '../../theme';
 
@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.splashBG,
+    backgroundColor: colors.white,
   },
   image: {
     height: scale(300),

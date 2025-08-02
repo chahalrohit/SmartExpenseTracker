@@ -2,9 +2,9 @@
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import Splash from '../screens/splash/Splash';
 import Onboarding from '../screens/onboarding/Onboarding';
-import Login from '../screens/auth/Login';
+import Splash from '../screens/splash/Splash';
+import Home from '../screens/home/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,7 +13,7 @@ const CoreNavigation = () => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="splash" component={Splash} />
       <Stack.Screen name="onboarding" component={Onboarding} />
-      <Stack.Screen name="login" component={Login} />
+      <Stack.Screen name="home" component={Home} />
     </Stack.Navigator>
   );
 };
