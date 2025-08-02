@@ -22,6 +22,7 @@ interface Item {
 }
 
 const Onboarding = ({ navigation }: Props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState<Item[]>(onboardingData || []);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const carouselRef = useRef<ICarouselInstance>(null);
