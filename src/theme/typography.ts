@@ -12,7 +12,7 @@ const typography = {
     xs: scale(10),
     sm: scale(12),
     md: scale(14),
-    lg: scale(16),
+    lg: scale(18),
     xl: scale(22),
     xxl: scale(30),
   },

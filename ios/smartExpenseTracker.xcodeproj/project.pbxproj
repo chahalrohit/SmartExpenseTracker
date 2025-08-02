@@ -10,20 +10,30 @@
 		0C80B921A6F3F58F76C31292 /* libPods-smartExpenseTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-smartExpenseTracker.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		179799C21A4CF8B5A4E18A7A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
+		4AB9CA24C9C047688B089C64 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA9DE9858354527B9CC521D /* Montserrat-Bold.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
+		7BFAD6EA76134497939C1F1B /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52F1EAD55D2340E6A530B391 /* Montserrat-Light.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8EA2E5D6A8E24ADD83F34A2A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1AA2FB3D543404DBC400529 /* Montserrat-Medium.ttf */; };
+		CA186CF747BD47EE8751066B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 134C7FC664DA49949AD59253 /* Montserrat-Regular.ttf */; };
+		D9EB4B1E6B21482781DE9DD0 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32EE10E6D63941829F01A73B /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		134C7FC664DA49949AD59253 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* smartExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = smartExpenseTracker/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = smartExpenseTracker/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = smartExpenseTracker/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		32EE10E6D63941829F01A73B /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-smartExpenseTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartExpenseTracker.debug.xcconfig"; path = "Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		52F1EAD55D2340E6A530B391 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Light.ttf"; path = "../src/assets/fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-smartExpenseTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartExpenseTracker.release.xcconfig"; path = "Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-smartExpenseTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-smartExpenseTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = smartExpenseTracker/AppDelegate.swift; sourceTree = "<group>"; };
+		7DA9DE9858354527B9CC521D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = smartExpenseTracker/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D1AA2FB3D543404DBC400529 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,6 +70,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F990C335A564BC58B4E8355 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7DA9DE9858354527B9CC521D /* Montserrat-Bold.ttf */,
+				52F1EAD55D2340E6A530B391 /* Montserrat-Light.ttf */,
+				D1AA2FB3D543404DBC400529 /* Montserrat-Medium.ttf */,
+				134C7FC664DA49949AD59253 /* Montserrat-Regular.ttf */,
+				32EE10E6D63941829F01A73B /* Montserrat-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +98,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				7F990C335A564BC58B4E8355 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -161,6 +185,11 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				179799C21A4CF8B5A4E18A7A /* PrivacyInfo.xcprivacy in Resources */,
+				4AB9CA24C9C047688B089C64 /* Montserrat-Bold.ttf in Resources */,
+				7BFAD6EA76134497939C1F1B /* Montserrat-Light.ttf in Resources */,
+				8EA2E5D6A8E24ADD83F34A2A /* Montserrat-Medium.ttf in Resources */,
+				CA186CF747BD47EE8751066B /* Montserrat-Regular.ttf in Resources */,
+				D9EB4B1E6B21482781DE9DD0 /* Montserrat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,13 +220,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -234,13 +259,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -386,7 +407,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -455,7 +479,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

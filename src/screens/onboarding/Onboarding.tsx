@@ -10,6 +10,10 @@ import styles from './Onboarding.styles';
 
 const { height, width } = Dimensions.get('screen');
 
+interface Props {
+  navigation: any;
+}
+
 interface Item {
   id: number;
   title: string;
@@ -17,7 +21,7 @@ interface Item {
   image: number | FastImageSource;
 }
 
-const Onboarding = () => {
+const Onboarding = ({ navigation }: Props) => {
   const [data, setData] = useState<Item[]>(onboardingData || []);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const carouselRef = useRef<ICarouselInstance>(null);
@@ -43,7 +47,12 @@ const Onboarding = () => {
   };
 
   const handleSkip = () => {
-    goTo(data.length - 1);
+    console.log(selectedIndex);
+    if (selectedIndex === 2) {
+      navigation.navigate('home');
+    } else {
+      goTo(data.length - 1);
+    }
   };
 
   return (
