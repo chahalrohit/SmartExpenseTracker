@@ -1,9 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { render } from '@testing-library/react-native';
-import { Text, View } from 'react-native';
 import AuthNavigation from '../src/navigation/AuthNavigation';
 
 jest.mock('../src/screens/splash/Splash', () => {
+  const { View, Text } = require('react-native');
   const MockSplash = () => {
     return (
       <View testID="splash-screen">
@@ -15,6 +15,7 @@ jest.mock('../src/screens/splash/Splash', () => {
 });
 
 jest.mock('../src/screens/home/Home', () => {
+  const { View, Text } = require('react-native');
   const MockHome = () => (
     <View testID="home-screen">
       <Text>Home Screen</Text>
@@ -24,6 +25,7 @@ jest.mock('../src/screens/home/Home', () => {
 });
 
 jest.mock('../src/screens/onboarding/Onboarding', () => {
+  const { View, Text } = require('react-native');
   const MockOnboarding = () => (
     <View testID="onboarding-screen">
       <Text>Onboarding Screen</Text>
@@ -33,6 +35,7 @@ jest.mock('../src/screens/onboarding/Onboarding', () => {
 });
 
 jest.mock('../src/screens/auth/Login', () => {
+  const { View, Text } = require('react-native');
   const MockLogin = () => (
     <View testID="login-screen">
       <Text>Login Screen</Text>

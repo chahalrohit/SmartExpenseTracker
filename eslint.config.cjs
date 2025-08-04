@@ -51,6 +51,9 @@ module.exports = [
   // ✅ Add Jest support
   {
     files: ['**/__tests__/**', '**/*.test.ts', '**/*.test.tsx', 'jestSetup.js'],
+    rules: {
+      '@typescript-eslint/no-require-imports': 'off',
+    }, // allow require() only for *.test.tsx
     languageOptions: {
       globals: {
         ...globals.jest, // ✅ Jest globals like "jest", "describe", "it"
