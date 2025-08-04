@@ -5,6 +5,9 @@ const react = require('eslint-plugin-react');
 const reactNative = require('eslint-plugin-react-native');
 const prettier = require('eslint-plugin-prettier');
 
+// ✅ Add this import for jest plugin
+const globals = require('globals');
+
 module.exports = [
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -43,6 +46,15 @@ module.exports = [
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/no-unused-vars': ['warn'],
       '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
+  // ✅ Add Jest support
+  {
+    files: ['**/__tests__/**', '**/*.test.ts', '**/*.test.tsx', 'jestSetup.js'],
+    languageOptions: {
+      globals: {
+        ...globals.jest, // ✅ Jest globals like "jest", "describe", "it"
+      },
     },
   },
 ];

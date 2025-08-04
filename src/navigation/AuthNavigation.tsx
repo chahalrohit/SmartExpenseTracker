@@ -9,7 +9,7 @@ import Login from '../screens/auth/Login';
 
 const Stack = createNativeStackNavigator();
 
-const CoreNavigation = () => {
+const AuthNavigation = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="splash" component={Splash} />
@@ -19,4 +19,4 @@ const CoreNavigation = () => {
     </Stack.Navigator>
   );
 };
-export default CoreNavigation;
+export default AuthNavigation;

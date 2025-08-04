@@ -1,10 +1,13 @@
-import React from 'react';
 import { render } from '@testing-library/react-native';
+import React from 'react';
+import { View } from 'react-native';
 import App from '../App';
 
 // Mock AuthNavigation safely
 jest.mock('../src/navigation/AuthNavigation', () => {
-  return () => <div testID="auth-navigation" />;
+  return jest.fn(() =>
+    React.createElement(View, { testID: 'auth-navigation' }),
+  );
 });
 
 describe('App Component', () => {

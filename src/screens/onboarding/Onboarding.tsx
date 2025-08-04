@@ -57,7 +57,7 @@ const Onboarding = ({ navigation }: Props) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} testID="onboarding-screen">
       <Carousel
         ref={carouselRef}
         loop={false}

@@ -30,7 +30,7 @@ const Login = ({ navigation }: Props) => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} testID="login-screen">
       <Button title="Sign in with Google" onPress={signIn} />
     </SafeAreaView>
   );

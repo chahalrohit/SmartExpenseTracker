@@ -119,7 +119,7 @@ const Splash = ({ navigation }: Props) => {
   // }
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.container} testID="splash-screen">
       <CustomImage source={images.splash} style={styles.image} />
     </SafeAreaView>
   );
