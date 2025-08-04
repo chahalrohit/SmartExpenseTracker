@@ -1,4 +1,4 @@
-package com.smartspend
+package com.smartexpensetracker
 
 import android.app.Application
 import com.facebook.react.PackageList

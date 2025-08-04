@@ -1,3 +1,4 @@
+# Resolve react_native_pods.rb with node to allow for hoisting
 require Pod::Executable.execute_command('node', ['-p',
   'require.resolve(
     "react-native/scripts/react_native_pods.rb",
@@ -13,12 +14,8 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'SmartSpend' do
+target 'SmartExpenseTracker' do
   config = use_native_modules!
-
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
-  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
-
 
   use_react_native!(
     :path => config[:reactNativePath],

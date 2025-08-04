@@ -1,12 +1,17 @@
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import React, { useEffect } from 'react';
 import { Button, SafeAreaView } from 'react-native';
+import styles from './Login.styles';
 
-const Login = () => {
+interface Props {
+  navigation: any;
+}
+
+const Login = ({ navigation }: Props) => {
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
-        '889232190343-rm5u6p0mgt4tivsd4ifh1lfccerp2qqu.apps.googleusercontent.com',
+        '692246726913-fdsc36obdnk94bc9at27fsc857nts79b.apps.googleusercontent.com',
       offlineAccess: true,
     });
   }, []);
@@ -15,14 +20,17 @@ const Login = () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      console.log(userInfo);
-    } catch (error) {
-      console.error(error);
+      console.log('Google Signin UserInfo -->> ', userInfo);
+      navigation.navigate('home');
+    } catch (e: any) {
+      console.log('nativeStatusCode →', e.nativeStatusCode); // 17 = SIGN_IN_FAILED
+      console.log('statusCode      →', e.statusCode); // ditto
+      console.log('message         →', e.message);
     }
   };
 
   return (
-    <SafeAreaView style={{ flex: 1, justifyContent: 'center', padding: 16 }}>
+    <SafeAreaView style={styles.container}>
       <Button title="Sign in with Google" onPress={signIn} />
     </SafeAreaView>
   );
