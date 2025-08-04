@@ -1,4 +1,4 @@
-package com.smsexpensetracker
+package com.smartspend
 
 import android.app.Application
 import com.facebook.react.PackageList

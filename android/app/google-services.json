@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "889232190343",
+    "project_id": "smartspend-3ad3a",
+    "storage_bucket": "smartspend-3ad3a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889232190343:android:2bbe1062a50e7d1b41c122",
+        "android_client_info": {
+          "package_name": "com.smartspend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889232190343-rm5u6p0mgt4tivsd4ifh1lfccerp2qqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLyoZHYjFemfliIcXLFhGhYcPMnvBbB8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889232190343-rm5u6p0mgt4tivsd4ifh1lfccerp2qqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

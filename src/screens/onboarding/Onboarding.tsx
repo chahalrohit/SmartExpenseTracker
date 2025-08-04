@@ -50,7 +50,7 @@ const Onboarding = ({ navigation }: Props) => {
   const handleSkip = () => {
     console.log(selectedIndex);
     if (selectedIndex === 2) {
-      navigation.navigate('home');
+      navigation.navigate('login');
     } else {
       goTo(data.length - 1);
     }
