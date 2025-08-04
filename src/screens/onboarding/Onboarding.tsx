@@ -1,14 +1,5 @@
-import React, { memo, useCallback, useEffect, useRef, useState } from 'react';
-import {
-  Dimensions,
-  Text,
-  TouchableOpacity,
-  View,
-  BackHandler,
-  Linking,
-  PermissionsAndroid,
-  Alert,
-} from 'react-native';
+import React, { memo, useCallback, useRef, useState } from 'react';
+import { Dimensions, Text, TouchableOpacity, View } from 'react-native';
 import { Source as FastImageSource } from 'react-native-fast-image';
 import type { ICarouselInstance } from 'react-native-reanimated-carousel';
 import Carousel from 'react-native-reanimated-carousel';
@@ -31,6 +22,7 @@ interface Item {
 }
 
 const Onboarding = ({ navigation }: Props) => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, setData] = useState<Item[]>(onboardingData || []);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const carouselRef = useRef<ICarouselInstance>(null);
@@ -56,11 +48,12 @@ const Onboarding = ({ navigation }: Props) => {
   };
 
   const handleSkip = () => {
-    goTo(data.length - 1);
-  };
-
-  const goToLogin = () => {
-    navigation.navigate('login');
+    console.log(selectedIndex);
+    if (selectedIndex === 2) {
+      navigation.navigate('login');
+    } else {
+      goTo(data.length - 1);
+    }
   };
 
   return (
@@ -78,9 +71,7 @@ const Onboarding = ({ navigation }: Props) => {
       <View style={styles.controls}>
         {selectedIndex < data.length && (
           <View style={styles.btnView}>
-            <TouchableOpacity
-              onPress={() => (selectedIndex !== 2 ? handleSkip() : goToLogin())}
-            >
+            <TouchableOpacity onPress={handleSkip}>
               <Text style={styles.btn}>
                 {selectedIndex !== 2 ? 'Skip' : 'Get Started'}
               </Text>
