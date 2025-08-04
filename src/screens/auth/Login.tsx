@@ -3,7 +3,11 @@ import React, { useEffect } from 'react';
 import { Button, SafeAreaView } from 'react-native';
 import styles from './Login.styles';
 
-const Login = () => {
+interface Props {
+  navigation: any;
+}
+
+const Login = ({ navigation }: Props) => {
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
@@ -16,7 +20,8 @@ const Login = () => {
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
-      console.log(userInfo);
+      console.log('Google Signin UserInfo -->> ', userInfo);
+      navigation.navigate('home');
     } catch (e: any) {
       console.log('nativeStatusCode →', e.nativeStatusCode); // 17 = SIGN_IN_FAILED
       console.log('statusCode      →', e.statusCode); // ditto
