@@ -7,33 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C80B921A6F3F58F76C31292 /* libPods-smartExpenseTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-smartExpenseTracker.a */; };
+		0C80B921A6F3F58F76C31292 /* libPods-SmartExpenseTracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SmartExpenseTracker.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		179799C21A4CF8B5A4E18A7A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		4AB9CA24C9C047688B089C64 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DA9DE9858354527B9CC521D /* Montserrat-Bold.ttf */; };
+		593E829E7E38853947BC724F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
-		7BFAD6EA76134497939C1F1B /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52F1EAD55D2340E6A530B391 /* Montserrat-Light.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		8EA2E5D6A8E24ADD83F34A2A /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D1AA2FB3D543404DBC400529 /* Montserrat-Medium.ttf */; };
-		CA186CF747BD47EE8751066B /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 134C7FC664DA49949AD59253 /* Montserrat-Regular.ttf */; };
-		D9EB4B1E6B21482781DE9DD0 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32EE10E6D63941829F01A73B /* Montserrat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		134C7FC664DA49949AD59253 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* smartExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = smartExpenseTracker/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = smartExpenseTracker/Info.plist; sourceTree = "<group>"; };
-		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = smartExpenseTracker/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		32EE10E6D63941829F01A73B /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-smartExpenseTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartExpenseTracker.debug.xcconfig"; path = "Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker.debug.xcconfig"; sourceTree = "<group>"; };
-		52F1EAD55D2340E6A530B391 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Light.ttf"; path = "../src/assets/fonts/Montserrat-Light.ttf"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-smartExpenseTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartExpenseTracker.release.xcconfig"; path = "Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker.release.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-smartExpenseTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-smartExpenseTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = smartExpenseTracker/AppDelegate.swift; sourceTree = "<group>"; };
-		7DA9DE9858354527B9CC521D /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = smartExpenseTracker/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D1AA2FB3D543404DBC400529 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* SmartExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SmartExpenseTracker/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SmartExpenseTracker/Info.plist; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SmartExpenseTracker/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3B4392A12AC88292D35C810B /* Pods-SmartExpenseTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartExpenseTracker.debug.xcconfig"; path = "Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-SmartExpenseTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartExpenseTracker.release.xcconfig"; path = "Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker.release.xcconfig"; sourceTree = "<group>"; };
+		5DCACB8F33CDC322A6C60F78 /* libPods-SmartExpenseTracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SmartExpenseTracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SmartExpenseTracker/AppDelegate.swift; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SmartExpenseTracker/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -42,14 +32,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-smartExpenseTracker.a in Frameworks */,
+				0C80B921A6F3F58F76C31292 /* libPods-SmartExpenseTracker.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B07FAE1A68108700A75B9A /* smartExpenseTracker */ = {
+		13B07FAE1A68108700A75B9A /* SmartExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -58,29 +48,16 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 			);
-			name = smartExpenseTracker;
+			name = SmartExpenseTracker;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-smartExpenseTracker.a */,
+				5DCACB8F33CDC322A6C60F78 /* libPods-SmartExpenseTracker.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7F990C335A564BC58B4E8355 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				7DA9DE9858354527B9CC521D /* Montserrat-Bold.ttf */,
-				52F1EAD55D2340E6A530B391 /* Montserrat-Light.ttf */,
-				D1AA2FB3D543404DBC400529 /* Montserrat-Medium.ttf */,
-				134C7FC664DA49949AD59253 /* Montserrat-Regular.ttf */,
-				32EE10E6D63941829F01A73B /* Montserrat-SemiBold.ttf */,
-			);
-			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -93,12 +70,11 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* smartExpenseTracker */,
+				13B07FAE1A68108700A75B9A /* SmartExpenseTracker */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				7F990C335A564BC58B4E8355 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -108,7 +84,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* smartExpenseTracker.app */,
+				13B07F961A680F5B00A75B9A /* SmartExpenseTracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,8 +92,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-smartExpenseTracker.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-smartExpenseTracker.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-SmartExpenseTracker.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-SmartExpenseTracker.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -125,9 +101,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* smartExpenseTracker */ = {
+		13B07F861A680F5B00A75B9A /* SmartExpenseTracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "smartExpenseTracker" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SmartExpenseTracker" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -141,9 +117,9 @@
 			);
 			dependencies = (
 			);
-			name = smartExpenseTracker;
-			productName = smartExpenseTracker;
-			productReference = 13B07F961A680F5B00A75B9A /* smartExpenseTracker.app */;
+			name = SmartExpenseTracker;
+			productName = SmartExpenseTracker;
+			productReference = 13B07F961A680F5B00A75B9A /* SmartExpenseTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "smartExpenseTracker" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SmartExpenseTracker" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* smartExpenseTracker */,
+				13B07F861A680F5B00A75B9A /* SmartExpenseTracker */,
 			);
 		};
 /* End PBXProject section */
@@ -184,12 +160,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				179799C21A4CF8B5A4E18A7A /* PrivacyInfo.xcprivacy in Resources */,
-				4AB9CA24C9C047688B089C64 /* Montserrat-Bold.ttf in Resources */,
-				7BFAD6EA76134497939C1F1B /* Montserrat-Light.ttf in Resources */,
-				8EA2E5D6A8E24ADD83F34A2A /* Montserrat-Medium.ttf in Resources */,
-				CA186CF747BD47EE8751066B /* Montserrat-Regular.ttf in Resources */,
-				D9EB4B1E6B21482781DE9DD0 /* Montserrat-SemiBold.ttf in Resources */,
+				593E829E7E38853947BC724F /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,15 +189,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
@@ -244,7 +215,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-smartExpenseTracker-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SmartExpenseTracker-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -257,15 +228,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-smartExpenseTracker/Pods-smartExpenseTracker-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SmartExpenseTracker/Pods-SmartExpenseTracker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -284,14 +255,14 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-smartExpenseTracker.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-SmartExpenseTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SF5B8679N8;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = smartExpenseTracker/Info.plist;
+				INFOPLIST_FILE = SmartExpenseTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,7 +275,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = smartExpenseTracker;
+				PRODUCT_NAME = SmartExpenseTracker;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -313,13 +284,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-smartExpenseTracker.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-SmartExpenseTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SF5B8679N8;
-				INFOPLIST_FILE = smartExpenseTracker/Info.plist;
+				INFOPLIST_FILE = SmartExpenseTracker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -332,7 +303,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = smartExpenseTracker;
+				PRODUCT_NAME = SmartExpenseTracker;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -493,7 +464,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "smartExpenseTracker" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SmartExpenseTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -502,7 +473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "smartExpenseTracker" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SmartExpenseTracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
