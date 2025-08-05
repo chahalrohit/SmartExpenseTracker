@@ -10,6 +10,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      CI: true
+      INIT_CWD: ${{ github.workspace }}
+      RCT_NO_IOS_CODEGEN: 1
+
     steps:
       # 1. Checkout Repository
       - name: Checkout repository
@@ -19,7 +24,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 24
+          cache: 'yarn'
 
       # 3. Cache node_modules
       - name: Cache node_modules
@@ -57,26 +63,33 @@ jobs:
         run: |
           echo "${{ secrets.MYAPP_UPLOAD_STORE_FILE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
-      # 8. Generate Autolinking Native Code (Skip iOS in CI)
+      # 8. Generate Autolinking Native Code (Android only)
       - name: Generate Native Codegen
-        run: |
-          RCT_NO_IOS_CODEGEN=1 yarn react-native codegen
+        run: yarn react-native codegen
 
       # 9. Clean & Build Signed APK
       - name: Clean & Build Signed APK
         run: |
           cd android
+          chmod +x ./gradlew
           ./gradlew clean
           ./gradlew assembleRelease \
-          -PMYAPP_UPLOAD_STORE_FILE=my-release-key.jks \
-          -PMYAPP_UPLOAD_KEY_ALIAS=${{ secrets.KEY_ALIAS }} \
-          -PMYAPP_UPLOAD_STORE_PASSWORD=${{ secrets.STORE_PASSWORD }} \
-          -PMYAPP_UPLOAD_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
+            -PMYAPP_UPLOAD_STORE_FILE=my-release-key.jks \
+            -PMYAPP_UPLOAD_KEY_ALIAS=${{ secrets.KEY_ALIAS }} \
+            -PMYAPP_UPLOAD_STORE_PASSWORD=${{ secrets.STORE_PASSWORD }} \
+            -PMYAPP_UPLOAD_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
+          cd ..
 
-      # 10. Upload Artifact (APK)
+      # 10. Rename APK with Commit Hash
+      - name: Rename APK
+        run: |
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+          mv android/app/build/outputs/apk/release/app-release.apk android/app/build/outputs/apk/release/SmartExpenseTracker-$COMMIT_HASH.apk
+
+      # 11. Upload Artifact (APK)
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: SmartExpenseTracker-APK
-          path: android/app/build/outputs/apk/release/app-release.apk
+          path: android/app/build/outputs/apk/release/SmartExpenseTracker-*.apk
           retention-days: 7
