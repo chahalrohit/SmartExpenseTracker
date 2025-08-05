@@ -37,7 +37,11 @@ jobs:
         run: |
           echo "${{ secrets.MYAPP_UPLOAD_STORE_FILE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
-      # 6. Clean & Build Signed APK
+      # 6. Generate Autolinking Native Code
+      - name: Generate Native Codegen
+        run: yarn react-native codegen
+
+      # 7. Clean & Build Signed APK
       - name: Clean & Build Signed APK
         run: |
           cd android
@@ -48,7 +52,7 @@ jobs:
           -PMYAPP_UPLOAD_STORE_PASSWORD=${{ secrets.STORE_PASSWORD }} \
           -PMYAPP_UPLOAD_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
 
-      # 7. Upload Artifact (APK) for Download
+      # 8. Upload Artifact (APK) for Download
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
