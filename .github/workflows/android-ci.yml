@@ -3,7 +3,7 @@ name: Android Signed APK Build
 on:
   push:
     branches:
-      - rohit-dev
+      - main
   workflow_dispatch:
 
 jobs:
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 22
+          node-version: 18
 
       # 3. Install Dependencies
       - name: Install dependencies
@@ -47,9 +47,10 @@ jobs:
           -PMYAPP_UPLOAD_STORE_PASSWORD=${{ secrets.STORE_PASSWORD }} \
           -PMYAPP_UPLOAD_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
 
-      # 7. Upload Artifact (APK)
+      # 7. Upload Artifact (APK) for Download
       - name: Upload APK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: app-release
+          name: SmartExpenseTracker-APK
           path: android/app/build/outputs/apk/release/app-release.apk
+          retention-days: 7
