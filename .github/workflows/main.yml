@@ -63,9 +63,10 @@ jobs:
         run: |
           echo "${{ secrets.MYAPP_UPLOAD_STORE_FILE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
-      # 8. Generate Autolinking Native Code (Android only)
-      - name: Generate Native Codegen
-        run: yarn react-native codegen
+        # 8. Generate Autolinking Native Code (Skip iOS in CI)
+      - name: Generate Native Codegen (Android only)
+        run: |
+          RCT_NO_IOS_CODEGEN=1 yarn react-native codegen
 
       # 9. Clean & Build Signed APK
       - name: Clean & Build Signed APK
