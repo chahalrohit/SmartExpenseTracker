@@ -19,9 +19,9 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 24
+          node-version: 20
 
-      # 3. Cache node_modules for faster builds
+      # 3. Cache node_modules
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
@@ -57,9 +57,10 @@ jobs:
         run: |
           echo "${{ secrets.MYAPP_UPLOAD_STORE_FILE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
-      # 8. Generate Autolinking Native Code (CMake error fix)
+      # 8. Generate Autolinking Native Code (Skip iOS in CI)
       - name: Generate Native Codegen
-        run: yarn react-native codegen
+        run: |
+          RCT_NO_IOS_CODEGEN=1 yarn react-native codegen
 
       # 9. Clean & Build Signed APK
       - name: Clean & Build Signed APK
@@ -72,7 +73,7 @@ jobs:
           -PMYAPP_UPLOAD_STORE_PASSWORD=${{ secrets.STORE_PASSWORD }} \
           -PMYAPP_UPLOAD_KEY_PASSWORD=${{ secrets.KEY_PASSWORD }}
 
-      # 10. Upload Artifact (APK) for Download
+      # 10. Upload Artifact (APK)
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
