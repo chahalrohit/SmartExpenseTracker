@@ -37,10 +37,11 @@ jobs:
         run: |
           echo "${{ secrets.MYAPP_UPLOAD_STORE_FILE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
-      # 6. Build Signed APK
-      - name: Build Signed APK
+      # 6. Clean & Build Signed APK
+      - name: Clean & Build Signed APK
         run: |
           cd android
+          ./gradlew clean
           ./gradlew assembleRelease \
           -PMYAPP_UPLOAD_STORE_FILE=my-release-key.jks \
           -PMYAPP_UPLOAD_KEY_ALIAS=${{ secrets.KEY_ALIAS }} \
