@@ -13,7 +13,6 @@ jobs:
     env:
       CI: true
       INIT_CWD: ${{ github.workspace }}
-      RCT_NO_IOS_CODEGEN: 1
 
     steps:
       # 1. Checkout Repository
@@ -24,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 24
+          node-version: 20
           cache: 'yarn'
 
       # 3. Cache node_modules
@@ -63,10 +62,11 @@ jobs:
         run: |
           echo "${{ secrets.MYAPP_UPLOAD_STORE_FILE_BASE64 }}" | base64 --decode > android/app/my-release-key.jks
 
-        # 8. Generate Autolinking Native Code (Skip iOS in CI)
+      # 8. Generate Autolinking Native Code (Android only)
       - name: Generate Native Codegen (Android only)
-        run: |
-          RCT_NO_IOS_CODEGEN=1 yarn react-native codegen
+        run: yarn react-native codegen
+        env:
+          RCT_NO_IOS_CODEGEN: 1
 
       # 9. Clean & Build Signed APK
       - name: Clean & Build Signed APK
