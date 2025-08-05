@@ -1,10 +1,8 @@
 module.exports = {
-  dependencies: {
-    ...require('@react-native-community/cli-platform-android'),
+  dependencies: {},
+  project: {
+    ios: {},
+    android: {},
   },
-  // project: {
-  //   ios: {},
-  //   android: {},
-  // },
   assets: ['./src/assets/fonts'],
 };
