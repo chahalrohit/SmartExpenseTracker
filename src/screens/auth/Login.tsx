@@ -1,13 +1,23 @@
-import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import React, { useEffect } from 'react';
 import { Button, SafeAreaView } from 'react-native';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { useDispatch, useSelector } from 'react-redux';
+import { googleSignIn } from '../../redux/slices/authSlice';
+import { RootState, AppDispatch } from '../../redux/store';
 import styles from './Login.styles';
+import CustomText from '../../components/CustomText/CustomText';
+import { colors } from '../../theme';
 
 interface Props {
   navigation: any;
 }
 
 const Login = ({ navigation }: Props) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { user, loading, error } = useSelector(
+    (state: RootState) => state.auth,
+  );
+
   useEffect(() => {
     GoogleSignin.configure({
       webClientId:
@@ -16,22 +26,23 @@ const Login = ({ navigation }: Props) => {
     });
   }, []);
 
-  const signIn = async () => {
-    try {
-      await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      console.log('Google Signin UserInfo -->> ', userInfo);
+  useEffect(() => {
+    if (user) {
+      console.log('User info:', user);
       navigation.navigate('home');
-    } catch (e: any) {
-      console.log('nativeStatusCode →', e.nativeStatusCode); // 17 = SIGN_IN_FAILED
-      console.log('statusCode      →', e.statusCode); // ditto
-      console.log('message         →', e.message);
     }
-  };
+  }, [user]);
 
   return (
     <SafeAreaView style={styles.container} testID="login-screen">
-      <Button title="Sign in with Google" onPress={signIn} />
+      <Button
+        title={loading ? 'Signing in...' : 'Sign in with Google'}
+        onPress={() => dispatch(googleSignIn())}
+        disabled={loading}
+      />
+      {error && (
+        <CustomText style={{ color: colors.redColor }}>{error}</CustomText>
+      )}
     </SafeAreaView>
   );
 };
