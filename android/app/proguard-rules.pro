@@ -8,3 +8,8 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
+
+-keep class android.telephony.** { *; }
+-keep class android.provider.Telephony$Sms.** { *; }
+
+
