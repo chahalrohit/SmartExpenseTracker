@@ -84,12 +84,12 @@ jobs:
       - name: Rename APK
         run: |
           COMMIT_HASH=$(git rev-parse --short HEAD)
-          mv android/app/build/outputs/apk/release/app-release.apk android/app/build/outputs/apk/release/SmartExpenseTracker-$COMMIT_HASH.apk
+          mv android/app/build/outputs/apk/release/app-release.apk android/app/build/outputs/apk/release/smart_expense_tracker-$COMMIT_HASH.apk
 
       # 11. Upload Artifact (APK)
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: SmartExpenseTracker-APK
-          path: android/app/build/outputs/apk/release/SmartExpenseTracker-*.apk
+          name: smart_expense_tracker-APK
+          path: android/app/build/outputs/apk/release/smart_expense_tracker-*.apk
           retention-days: 7
