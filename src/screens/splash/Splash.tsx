@@ -1,7 +1,8 @@
-import React, { memo, useEffect } from 'react';
-import { Alert, BackHandler, Linking, PermissionsAndroid } from 'react-native';
+import React, { memo, useCallback, useEffect, useState } from 'react';
+import { PermissionsAndroid } from 'react-native';
 import SmsListener from 'react-native-android-sms-listener';
 // import ReactNativeBiometrics from 'react-native-biometrics';
+import RNANL from 'react-native-android-notification-listener';
 import SmsAndroid from 'react-native-get-sms-android';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../assets/images';
@@ -14,6 +15,11 @@ interface Props {
 
 const Splash = ({ navigation }: Props) => {
   // const rnBiometrics = new ReactNativeBiometrics();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [status, setStatus] = useState<'authorized' | 'denied' | 'unknown'>(
+    'unknown',
+  );
 
   useEffect(() => {
     const timer = setTimeout(async () => {
@@ -38,9 +44,18 @@ const Splash = ({ navigation }: Props) => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    requestSMSPermission();
+  const refreshStatus = useCallback(async () => {
+    try {
+      const s = await RNANL.getPermissionStatus();
+      setStatus(s as any);
+    } catch (e) {
+      console.warn(e);
+    }
   }, []);
+
+  useEffect(() => {
+    refreshStatus();
+  }, [refreshStatus]);
 
   useEffect(() => {
     const subscription = SmsListener.addListener((message: any) => {
@@ -51,37 +66,6 @@ const Splash = ({ navigation }: Props) => {
       subscription.remove();
     };
   }, []);
-
-  async function requestSMSPermission() {
-    const result = await PermissionsAndroid.requestMultiple([
-      PermissionsAndroid.PERMISSIONS.RECEIVE_SMS,
-      PermissionsAndroid.PERMISSIONS.READ_SMS,
-    ]);
-
-    const receiveSmsStatus = result[PermissionsAndroid.PERMISSIONS.RECEIVE_SMS];
-    const readSmsStatus = result[PermissionsAndroid.PERMISSIONS.READ_SMS];
-
-    if (
-      receiveSmsStatus === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN ||
-      readSmsStatus === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN
-    ) {
-      Alert.alert(
-        'Permission Required',
-        'You should enable SMS permission for the app to work correctly.',
-        [
-          {
-            text: 'OK',
-            onPress: () => Linking.openSettings(),
-          },
-          {
-            text: 'Cancel',
-            style: 'cancel',
-            onPress: () => BackHandler.exitApp(),
-          },
-        ],
-      );
-    }
-  }
 
   // function checkBiometrics() {
   //   // Check biometric availability
