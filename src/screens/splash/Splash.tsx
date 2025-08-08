@@ -1,9 +1,8 @@
-import React, { memo, useCallback, useEffect, useState } from 'react';
-import { PermissionsAndroid } from 'react-native';
-import SmsListener from 'react-native-android-sms-listener';
+import React, { memo, useEffect, useRef, useState } from 'react';
 // import ReactNativeBiometrics from 'react-native-biometrics';
-import RNANL from 'react-native-android-notification-listener';
-import SmsAndroid from 'react-native-get-sms-android';
+import RNAndroidNotificationListener from 'react-native-android-notification-listener';
+// import SmsAndroid from 'react-native-get-sms-android';
+import { AppState, AppStateStatus } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import images from '../../assets/images';
 import CustomImage from '../../components/Image/CustomImage';
@@ -21,51 +20,50 @@ const Splash = ({ navigation }: Props) => {
     'unknown',
   );
 
-  useEffect(() => {
-    const timer = setTimeout(async () => {
-      const granted = await PermissionsAndroid.check(
-        PermissionsAndroid.PERMISSIONS.READ_SMS,
-      );
-      if (granted) {
-        navigation.navigate('onboarding');
-        SmsAndroid.list(
-          JSON.stringify({ box: 'inbox', maxCount: 5 }),
-          (fail: any) => {
-            console.log('Failed:', fail);
-          },
-          (count: any, smsList: any) => {
-            const messages = JSON.parse(smsList);
-            console.log('Messages:', messages);
-          },
-        );
-      }
-    }, 2000);
+  const askedOnceRef = useRef(false); // loop रोकने के लिए
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  const refreshStatus = useCallback(async () => {
+  const checkPermission = async () => {
     try {
-      const s = await RNANL.getPermissionStatus();
-      setStatus(s as any);
+      const s = await RNAndroidNotificationListener.getPermissionStatus();
+      setStatus(s as typeof status);
+      return s; // ← IMPORTANT
     } catch (e) {
-      console.warn(e);
+      return 'unknown';
     }
+  };
+
+  useEffect(() => {
+    (async () => {
+      const current = await checkPermission();
+      if (current !== 'authorized' && !askedOnceRef.current) {
+        askedOnceRef.current = true;
+        try {
+          await RNAndroidNotificationListener.requestPermission(); // open settings
+          setTimeout(checkPermission, 800); // state refresh
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    })();
   }, []);
 
+  // When app returns from settings (foreground), re-check
   useEffect(() => {
-    refreshStatus();
-  }, [refreshStatus]);
-
-  useEffect(() => {
-    const subscription = SmsListener.addListener((message: any) => {
-      console.log('Received SMS:', message);
-    });
-
-    return () => {
-      subscription.remove();
+    const onChange = async (state: AppStateStatus) => {
+      if (state === 'active') {
+        await checkPermission();
+      }
     };
+    const sub = AppState.addEventListener('change', onChange);
+    return () => sub.remove();
   }, []);
+
+  // Navigate only when authorized
+  useEffect(() => {
+    if (status === 'authorized') {
+      navigation.replace('onboarding');
+    }
+  }, [status, navigation]);
 
   // function checkBiometrics() {
   //   // Check biometric availability
