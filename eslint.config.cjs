@@ -37,6 +37,11 @@ module.exports = [
       parserOptions: {
         ecmaFeatures: { jsx: true },
       },
+      globals: {
+        ...globals.browser, // browser-like globals (fetch, setTimeout, etc.)
+        ...globals.node, // node-like globals
+        console: 'readonly', // explicitly allow console
+      },
     },
     settings: {
       react: { version: 'detect' },

@@ -15,7 +15,6 @@ interface Props {
 const Splash = ({ navigation }: Props) => {
   // const rnBiometrics = new ReactNativeBiometrics();
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [status, setStatus] = useState<'authorized' | 'denied' | 'unknown'>(
     'unknown',
   );
@@ -27,7 +26,9 @@ const Splash = ({ navigation }: Props) => {
       const s = await RNAndroidNotificationListener.getPermissionStatus();
       setStatus(s as typeof status);
       return s; // ← IMPORTANT
-    } catch (e) {
+    } catch (e: any) {
+      console.error(e);
+
       return 'unknown';
     }
   };
