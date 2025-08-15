@@ -17,6 +17,9 @@ end
 target 'SmartExpenseTracker' do
   config = use_native_modules!
 
+  ENV['PLATFORM_NAME'] = 'iphonesimulator'
+  ENV['CURRENT_ARCH']  = 'arm64'
+
   use_react_native!(
     :path => config[:reactNativePath],
     # An absolute path to your application root.

@@ -11,6 +11,7 @@
     "codegen": "INIT_CWD=$PWD RCT_NO_IOS_CODEGEN=1 react-native codegen"
   },
   "dependencies": {
+    "@notifee/react-native": "^9.1.8",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-community/template": "0.80.1",
     "@react-native-google-signin/google-signin": "^15.0.0",
@@ -38,7 +39,7 @@
     "react-native-gesture-handler": "^2.27.1",
     "react-native-get-sms-android": "^2.1.0",
     "react-native-paper": "^5.14.5",
-    "react-native-permissions": "^5.4.1",
+    "react-native-permissions": "^5.4.2",
     "react-native-reanimated": "3.19.0",
     "react-native-reanimated-carousel": "^4.0.2",
     "react-native-safe-area-context": "^5.5.2",
