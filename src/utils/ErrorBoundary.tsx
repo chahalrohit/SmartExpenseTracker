@@ -1,7 +1,7 @@
 // ErrorBoundary.tsx
 
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { View, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 interface Props {
   children?: ReactNode;
@@ -32,9 +32,7 @@ export class ErrorBoundary extends Component<Props, State> {
       // Render custom fallback UI if provided, else default message
       return (
         this.props.fallback || (
-          <View
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-          >
+          <View style={styles.container}>
             <Text>Something went wrong.</Text>
           </View>
         )
@@ -44,5 +42,12 @@ export class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
-
 export default ErrorBoundary;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});

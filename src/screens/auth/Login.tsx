@@ -12,11 +12,6 @@ interface Props {
   navigation: any;
 }
 
-const BuggyComponent = () => {
-  throw new Error('Intentional error for testing!');
-  return null;
-};
-
 const Login = ({ navigation }: Props) => {
   const dispatch = useDispatch<AppDispatch>();
   const { user, loading, error } = useSelector(
@@ -40,15 +35,14 @@ const Login = ({ navigation }: Props) => {
 
   return (
     <SafeAreaView style={styles.container} testID="login-screen">
-      <BuggyComponent />
-      {/* <Button
+      <Button
         title={loading ? 'Signing in...' : 'Sign in with Google'}
         onPress={() => dispatch(googleSignIn())}
         disabled={loading}
       />
       {error && (
         <CustomText style={{ color: colors.redColor }}>{error}</CustomText>
-      )} */}
+      )}
     </SafeAreaView>
   );
 };
