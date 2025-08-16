@@ -1,11 +1,22 @@
 import { NavigationContainer } from '@react-navigation/native';
-import React, { useEffect } from 'react';
-import { StatusBar, PermissionsAndroid, Platform } from 'react-native';
-import AuthNavigation from './src/navigation/AuthNavigation';
+import { useEffect } from 'react';
+import {
+  Button,
+  PermissionsAndroid,
+  Platform,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import 'react-native-gesture-handler';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Provider } from 'react-redux';
+import AuthNavigation from './src/navigation/AuthNavigation';
 import store from './src/redux/store';
+// import ErrorBoundary from './src/utils/ErrorBoundary';
+import ErrorBoundary from 'react-native-error-boundary';
+import { scale } from 'react-native-size-matters';
 
 async function ensureNotifPermission() {
   if (Platform.OS !== 'android' || Platform.Version < 33) return true;
@@ -21,14 +32,67 @@ export default function App() {
   useEffect(() => {
     ensureNotifPermission();
   }, []);
+
+  const ErrorFallback = ({ error, resetError }) => {
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ color: 'red', marginBottom: scale(10) }}>
+          {error.message}
+        </Text>
+        <Button onPress={resetError} title="Try Again" />
+      </View>
+    );
+  };
+
+  const errorHandler = (error: Error, stackTrace: string) => {
+    console.error(
+      'Error: ' + error.message + '\n' + 'stackTrace Error' + stackTrace,
+    );
+  };
+
   return (
-    <Provider store={store}>
-      <GestureHandlerRootView style={{ flex: 1 }} testID="app-root">
-        <NavigationContainer>
-          <StatusBar barStyle="dark-content" />
-          <AuthNavigation />
-        </NavigationContainer>
-      </GestureHandlerRootView>
-    </Provider>
+    <ErrorBoundary
+      onError={errorHandler}
+      FallbackComponent={ErrorFallback}
+      // fallback={
+      //   <View
+      //     style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
+      //   >
+      //     <Text>This is Error Boundaries Message</Text>
+      //     <Text style={{ color: colors.redColor }}>Something went wrong.</Text>
+      //   </View>
+      // }
+    >
+      <Provider store={store}>
+        <GestureHandlerRootView style={{ flex: 1 }} testID="app-root">
+          <NavigationContainer>
+            <StatusBar barStyle="dark-content" />
+            <AuthNavigation />
+          </NavigationContainer>
+        </GestureHandlerRootView>
+      </Provider>
+    </ErrorBoundary>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#ecf0f1',
+    padding: 8,
+    textAlign: 'center',
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  icon: {
+    fontSize: 48,
+  },
+  text: {
+    marginVertical: 16,
+  },
+});
