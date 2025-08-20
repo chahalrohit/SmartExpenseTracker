@@ -1762,6 +1762,8 @@ PODS:
     - SocketRocket
   - react-native-biometrics (3.0.1):
     - React-Core
+  - react-native-encrypted-storage (4.0.3):
+    - React-Core
   - react-native-safe-area-context (5.6.0):
     - boost
     - DoubleConversion
@@ -2445,6 +2447,34 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
+  - RNKeychain (10.0.0):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
   - RNNotifee (9.1.8):
     - React-Core
     - RNNotifee/NotifeeCore (= 9.1.8)
@@ -2795,6 +2825,7 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-biometrics (from `../node_modules/react-native-biometrics`)
+  - react-native-encrypted-storage (from `../node_modules/react-native-encrypted-storage`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-sms (from `../node_modules/react-native-sms`)
   - "react-native-vector-icons-material-design-icons (from `../node_modules/@react-native-vector-icons/material-design-icons`)"
@@ -2832,6 +2863,7 @@ DEPENDENCIES:
   - RNFastImage (from `../node_modules/react-native-fast-image`)
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - "RNGoogleSignin (from `../node_modules/@react-native-google-signin/google-signin`)"
+  - RNKeychain (from `../node_modules/react-native-keychain`)
   - "RNNotifee (from `../node_modules/@notifee/react-native`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -2938,6 +2970,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   react-native-biometrics:
     :path: "../node_modules/react-native-biometrics"
+  react-native-encrypted-storage:
+    :path: "../node_modules/react-native-encrypted-storage"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-sms:
@@ -3012,6 +3046,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-gesture-handler"
   RNGoogleSignin:
     :path: "../node_modules/@react-native-google-signin/google-signin"
+  RNKeychain:
+    :path: "../node_modules/react-native-keychain"
   RNNotifee:
     :path: "../node_modules/@notifee/react-native"
   RNPermissions:
@@ -3075,6 +3111,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: bd5b1120c9bbaac6203eb288735e239f04e03009
   React-microtasksnativemodule: 10892b00e612d79436022a11e5bc8bdf468a284f
   react-native-biometrics: 352e5a794bfffc46a0c86725ea7dc62deb085bdc
+  react-native-encrypted-storage: db300a3f2f0aba1e818417c1c0a6be549038deb7
   react-native-safe-area-context: 2249e17382bd5a97cbccaa89e22af8756188c0fb
   react-native-sms: 05c30c6a7fe9befb24d0e7a95b0d2c8bdcbd7e51
   react-native-vector-icons-material-design-icons: c502df5b988ce85d6c7d2b7ee909818315760b82
@@ -3112,6 +3149,7 @@ SPEC CHECKSUMS:
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
   RNGestureHandler: 4f7cc97a71d4fe0fcba38c94acdd969f5f17c91c
   RNGoogleSignin: 87502f82bf180fefb16e160149bfe5b380c558e6
+  RNKeychain: 182d986f809280edd9444a557adc21845f7d1e6f
   RNNotifee: 4a6ee5c7deaf00e005050052d73ee6315dff7ec9
   RNPermissions: da2bf5ac9d13b38567c41b36d708a8e1636d80b1
   RNReanimated: f34a647d8ec420a69fb46be8507a2102b8601ff6
