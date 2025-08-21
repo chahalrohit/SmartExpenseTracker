@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, createContext, useContext } from 'react';
 import { Button } from 'react-native';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +8,7 @@ import styles from './Login.styles';
 import CustomText from '../../components/CustomText/CustomText';
 import { colors } from '../../theme';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { loginUser } from '../../api/authApi';
+import { loginUser } from '../../services/api/authApi';
 
 interface Props {
   navigation: any;
@@ -19,8 +19,6 @@ const Login = ({ navigation }: Props) => {
   const { user, loading, error } = useSelector(
     (state: RootState) => state.auth,
   );
-
-  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
     loginUser('rcrchahal@gmail.com', '123456')

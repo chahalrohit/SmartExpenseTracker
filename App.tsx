@@ -16,6 +16,7 @@ import store from './src/redux/store';
 // import ErrorBoundary from './src/utils/ErrorBoundary';
 import ErrorBoundary from 'react-native-error-boundary';
 import { scale } from 'react-native-size-matters';
+import { AuthProvider } from './src/screens/auth/AuthContext';
 
 async function ensureNotifPermission() {
   if (Platform.OS !== 'android' || Platform.Version < 33) return true;
@@ -32,7 +33,13 @@ export default function App() {
     ensureNotifPermission();
   }, []);
 
-  const ErrorFallback = ({ error, resetError }) => {
+  const ErrorFallback = ({
+    error,
+    resetError,
+  }: {
+    error: any;
+    resetError: any;
+  }) => {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text style={{ color: 'red', marginBottom: scale(10) }}>
@@ -62,14 +69,16 @@ export default function App() {
       //   </View>
       // }
     >
-      <Provider store={store}>
-        <GestureHandlerRootView style={{ flex: 1 }} testID="app-root">
-          <NavigationContainer>
-            <StatusBar barStyle="dark-content" />
-            <AuthNavigation />
-          </NavigationContainer>
-        </GestureHandlerRootView>
-      </Provider>
+      <AuthProvider>
+        <Provider store={store}>
+          <GestureHandlerRootView style={{ flex: 1 }} testID="app-root">
+            <NavigationContainer>
+              <StatusBar barStyle="dark-content" />
+              <AuthNavigation />
+            </NavigationContainer>
+          </GestureHandlerRootView>
+        </Provider>
+      </AuthProvider>
     </ErrorBoundary>
   );
 }
